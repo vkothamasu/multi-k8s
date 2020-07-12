@@ -16,7 +16,7 @@ before_install:
   - gcloud config set compute/zone asia-east1-a
   - gcloud container clusters get-credentials multi-k8s
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker build -t kothamasu/react-test -f ./client/Dockerfile.dev
+  - docker build -t kothamasu/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true kothamasu/react-test npm run test
