@@ -14,7 +14,7 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project multi-k8s-283103
   - gcloud config set compute/zone asia-east1-a
-  - gcloud container set cluster get-credentials multi-k8s
+  - gcloud container clusters get-credentials multi-k8s
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker build -t kothamasu/react-test -f ./client/Dockerfile.dev
 
