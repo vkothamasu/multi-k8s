@@ -21,3 +21,8 @@ before_install:
 script:
   - docker run -e CI=true kothamasu/react-test npm run test
 
+deploy:
+  provider: script
+  script: bash ./deploy2gcp.sh
+  on:
+    branch: master
